@@ -1,150 +1,256 @@
-/* feed.css */
+@font-face {
+    font-family: 'Dillan'; /* Nome que você dará à fonte */
+    src: url('./MADEDillan-Regular.otf') format('truetype'); /* Caminho para o arquivo da fonte */
+    font-weight: normal; /* Ajuste se necessário */
+    font-style: normal; /* Ajuste se necessário */
+}
 
-body {
-    font-family: Arial, sans-serif;
+/* Reset e estilos gerais */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body, html {
+    font-family: 'Dillan', sans-serif;
+    line-height: 1.6;
+    color: #333;
     background-color: #f4f4f4;
 }
-
-/* Seção de conteúdo principal */
-section.content {
-    padding: 50px;
-    text-align: center;
-    background: #f0f0f0;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+img {
+    max-width: 100%;
+    height: auto;
 }
 
-/* Estilo para a seção parallax */
-.parallax {
-    height: 400px; /* Ajuste a altura conforme necessário */
-    background: url('/Image/Paralax.jpg') no-repeat center center;
-    background-size: cover;
-    position: relative;
-    background-attachment: fixed;
-    color: white; /* Ajuste a cor do texto conforme necessário */
-}
-
-/* Estilo para o conteúdo sobre a imagem */
-.parallax-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente para melhorar a legibilidade */
-    border-radius: 10px; /* Opcional: bordas arredondadas */
-}
-
-main {
-    padding: 20px;
-}
-
-.create-post {
+/* Header */
+header {
     background-color: #fff;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-textarea {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    resize: none;
-    height: 100px;
-    font-size: 16px;
+    top: 0;
+    z-index: 1000;
 }
-
-button {
-    padding: 10px;
-    background-color: #a200ff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-button:hover {
-    background-color: #6b00b3;
-}
-
-.feed {
-    display: flex;
-    flex-direction: column;
-}
-
-.post {
-    background-color: white;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.post h2 {
-    margin-top: 0;
-}
-
-.post-actions {
-    margin-top: 10px;
-}
-
-.post-actions button {
-    margin-right: 10px;
-    background-color: #007BFF;
-}
-
-.post-actions button:hover {
-    background-color: #0056b3;
-}
-
- /*header {
-    transition: 0.2s;
-    background-color: #a200ff;
-    padding: 20px;
+.header-content {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
 }
-
-header h1 {
-    
-    color: white;
-    margin: 0;
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
 }
-
-ul {
+nav ul {
     display: flex;
-    align-items: none;
-    gap: 1.3rem;
     list-style: none;
 }
-
-.link {
-    position: relative;
+nav ul li {
+    margin-left: 1.5rem;
+}
+nav ul li a {
+    color: #333;
     text-decoration: none;
-    color: #fff;
-    font-size: 18px;
-    padding: 10px 0;
+    transition: color 0.3s ease;
+}
+nav ul li a:hover {
+    color: #7c3aed;
 }
 
-.link::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: o;
-    width: 100%;
-    height: 2px;
+/* Hero Section */
+.hero {
     background-color: #fff;
+    padding: 8rem 0 4rem;
+    text-align: center;
+}
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+.hero p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 2rem;
+}
+.btn {
+    display: inline-block;
+    background-color: #7c3aed;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
     border-radius: 5px;
-    transform: scaleX(0);
-    transform-origin: bottom right;
-    transition: all 0.6s ease;    
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+.btn:hover {
+    background-color: #6d28d9;
 }
 
-.link:hover::before {
-    transform: scaleX(1);  
-    transform-origin: bottom left;  
-} 
+/* Featured Posts Section */
+.featured-posts {
+    padding: 4rem 0;
+    background-color: #f0f0f0;
+}
+.featured-posts h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+.post-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+.post-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+.post-card:hover {
+    transform: translateY(-5px);
+}
+.post-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.post-info {
+    padding: 1.5rem;
+}
+.post-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+.post-info p {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+/* Skater Profiles Section */
+.skater-profiles {
+    padding: 4rem 0;
+    background-color: #fff;
+}
+.skater-profiles h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+.profile-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+.profile-card {
+    text-align: center;
+}
+.profile-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+.profile-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+.profile-card p {
+    color: #666;
+}
+
+/* Categories Section */
+.categories {
+    padding: 4rem 0;
+    background-color: #f0f0f0;
+}
+.categories h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+.category-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+.category-item {
+    background-color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.category-item:hover {
+    background-color: #7c3aed;
+    color: #fff;
+}
+
+/* Newsletter Section */
+.newsletter {
+    padding: 4rem 0;
+    background-color: #fff;
+    text-align: center;
+}
+.newsletter h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+.newsletter p {
+    color: #666;
+    margin-bottom: 2rem;
+}
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+.newsletter-form input[type="email"] {
+    padding: 0.8rem;
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 2rem 0;
+    text-align: center;
+}
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.footer-links ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+.footer-links ul li {
+    margin: 0 1rem;
+}
+.footer-links ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+.footer-social a {
+    color: #fff;
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+    text-decoration: none;
+}
