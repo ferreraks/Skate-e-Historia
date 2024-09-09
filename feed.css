@@ -1,0 +1,150 @@
+/* feed.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+/* Seção de conteúdo principal */
+section.content {
+    padding: 50px;
+    text-align: center;
+    background: #f0f0f0;
+}
+
+/* Estilo para a seção parallax */
+.parallax {
+    height: 400px; /* Ajuste a altura conforme necessário */
+    background: url('/Image/Paralax.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    background-attachment: fixed;
+    color: white; /* Ajuste a cor do texto conforme necessário */
+}
+
+/* Estilo para o conteúdo sobre a imagem */
+.parallax-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente para melhorar a legibilidade */
+    border-radius: 10px; /* Opcional: bordas arredondadas */
+}
+
+main {
+    padding: 20px;
+}
+
+.create-post {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: none;
+    height: 100px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px;
+    background-color: #a200ff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #6b00b3;
+}
+
+.feed {
+    display: flex;
+    flex-direction: column;
+}
+
+.post {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.post h2 {
+    margin-top: 0;
+}
+
+.post-actions {
+    margin-top: 10px;
+}
+
+.post-actions button {
+    margin-right: 10px;
+    background-color: #007BFF;
+}
+
+.post-actions button:hover {
+    background-color: #0056b3;
+}
+
+ /*header {
+    transition: 0.2s;
+    background-color: #a200ff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+header h1 {
+    
+    color: white;
+    margin: 0;
+}
+
+ul {
+    display: flex;
+    align-items: none;
+    gap: 1.3rem;
+    list-style: none;
+}
+
+.link {
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 0;
+}
+
+.link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: o;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: all 0.6s ease;    
+}
+
+.link:hover::before {
+    transform: scaleX(1);  
+    transform-origin: bottom left;  
+} 
