@@ -14,6 +14,6 @@ document.getElementById('login-form').addEventListener('submit', function(event)
         // Por exemplo, enviar uma requisição ao backend para validar o login.
 
         // Redirecionamento para o feed de atividades ou perfil do usuário
-        window.location.href = "/feed.html" // Substitua por 'perfil.html' ou outra página conforme necessário
+        window.location.href = "./feed.html" // Substitua por 'perfil.html' ou outra página conforme necessário
     }
 });
